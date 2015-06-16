@@ -39,7 +39,7 @@ module.exports = function(grunt) {
       },
       styles: {
         src: ['source/**/*.scss'],
-        dest: 'theme/assets/main.scss.liquid',
+        dest: 'theme/assets/theme.scss.liquid',
       }
     },
     imagemin: {
@@ -58,9 +58,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-jshint');
-
-  // grunt.loadNpmTasks('grunt-contrib-sass');
-  // grunt.loadNpmTasks('grunt-contrib-uglify');
 
   grunt.registerTask('default', ['jshint','concat','imagemin','watch']);
 };
