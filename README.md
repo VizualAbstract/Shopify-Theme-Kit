@@ -19,9 +19,9 @@ Shopify + Grunt + [Timber (v2.1.2)](https://github.com/Shopify/Timber).
 
 * Run `git clone git@github.com:MrPopperRx/Shopify-Theme-Kit.git`
 * Run `npm install` to install NPM packages
-* Run `grunt watch` to compile files and begin watching `/assets/`
-* Replace reference to **timber.scss.css** in `theme/layout/theme.liquid` on line `31` with **styles.scss.css**
-* Add `{{ 'main.js' | asset_url | script_tag }}` to `theme/layout/theme.liquid` on line `382`
+* Run `grunt watch` to compile files and begin watching the assets folder
+* Replace reference to `timber.scss.css` in **theme/layout/theme.liquid** on line `31` with `styles.scss.css`
+* Add `{{ 'main.js' | asset_url | script_tag }}` to **theme/layout/theme.liquid** on line `382`
 
 ## Additional Resources
 
