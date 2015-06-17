@@ -7,9 +7,9 @@ Get organized for your next Shopify theme project, featuring the [Timber (v2.1.2
 
 ## Features
 
-* Timber utilized as a submodule
 * Seperate Sass files for Timber's master `timber.scss.css`
-* Concacts and copies files into the assets folder
+* Concacts Sass into the assets folder
+* Compresses images
 
 ## NPM Packages
 
