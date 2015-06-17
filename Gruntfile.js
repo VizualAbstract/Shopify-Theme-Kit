@@ -39,7 +39,7 @@ module.exports = function(grunt) {
       },
       styles: {
         src: ['source/**/*.scss'],
-        dest: 'theme/assets/theme.scss.liquid',
+        dest: 'theme/assets/styles.scss.liquid',
       }
     },
     imagemin: {

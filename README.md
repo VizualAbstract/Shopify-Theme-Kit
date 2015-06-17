@@ -1,6 +1,9 @@
 # Shopify + Grunt + Timber
 
-Shopify + Grunt + [Timber (v2.1.2)](https://github.com/Shopify/Timber).
+Get organized for your next Shopify theme project, featuring the [Timber (v2.1.2)](https://github.com/Shopify/Timber) base theme by Shopify.
+
+![Shopify + Grunt + Timber](http://host.coreycapetillo.com/git/media/shopify-grunt-timber.png)
+
 
 ## Features
 
