@@ -2,9 +2,25 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     watch: {
-      styles: {
-        files: ['source/styles/**/*.scss'],
-        tasks: ['concat:styles'],
+      plugin_styles: {
+        files: ['source/styles/01 plugins/*.scss'],
+        tasks: ['concat:plugin_styles'],
+        options: {
+          interrupt: true,
+          spawn: false,
+        },
+      },
+      timber_styles: {
+        files: ['source/styles/02 timber/*.scss'],
+        tasks: ['concat:timber_styles'],
+        options: {
+          interrupt: true,
+          spawn: false,
+        },
+      },
+      theme_styles: {
+        files: ['source/styles/03 theme/*.scss'],
+        tasks: ['concat:theme_styles'],
         options: {
           interrupt: true,
           spawn: false,
