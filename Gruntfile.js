@@ -3,7 +3,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     watch: {
       plugin_styles: {
-        files: ['source/styles/01 plugins/*.scss'],
+        files: ['source/styles/01 plugins/**/*.scss'],
         tasks: ['concat:plugin_styles'],
         options: {
           interrupt: true,
@@ -11,7 +11,7 @@ module.exports = function(grunt) {
         },
       },
       timber_styles: {
-        files: ['source/styles/02 timber/*.scss'],
+        files: ['source/styles/02 timber/**/*.scss'],
         tasks: ['concat:timber_styles'],
         options: {
           interrupt: true,
@@ -19,7 +19,7 @@ module.exports = function(grunt) {
         },
       },
       theme_styles: {
-        files: ['source/styles/03 theme/*.scss'],
+        files: ['source/styles/03 theme/**/*.scss'],
         tasks: ['concat:theme_styles'],
         options: {
           interrupt: true,
@@ -54,15 +54,15 @@ module.exports = function(grunt) {
         dest: 'theme/assets/main.js.liquid',
       },
       plugin_styles: {
-        src: ['source/styles/00 plugins/*.scss'],
+        src: ['source/styles/01 plugins/**/*.scss'],
         dest: 'theme/assets/plugins.scss.liquid',
       },
       timber_styles: {
-        src: ['source/styles/01 timber/*.scss'],
+        src: ['source/styles/02 timber/**/*.scss'],
         dest: 'theme/assets/timber.scss.liquid',
       },
       theme_styles: {
-        src: ['source/styles/02 theme/*.scss'],
+        src: ['source/styles/03 theme/**/*.scss'],
         dest: 'theme/assets/theme.scss.liquid',
       }
     },
