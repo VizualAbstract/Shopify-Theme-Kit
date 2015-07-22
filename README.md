@@ -19,7 +19,7 @@ Get organized for your next Shopify theme project, featuring the [Timber (v2.1.2
 
 ## Instructions
 
-* Run `git clone git@github.com:MrPopperRx/Shopify-Theme-Kit.git`
+* Run `git clone git@github.com:VizualAbstract/Shopify-Theme-Kit.git`
 * Run `npm install` to install NPM packages
 * Run `grunt` to compile files and begin watching the assets folder
 
