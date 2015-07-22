@@ -152,14 +152,14 @@
       "delete": "Delete"
     },
     "login": {
-      "title": "Login",
-      "email": "Email",
+      "title": "Customer Login",
+      "email": "Email Address",
       "password": "Password",
-      "forgot_password": "Forgot your password?",
+      "forgot_password": "Password Recovery",
       "sign_in": "Sign In",
-      "cancel": "Return to Store",
-      "guest_title": "Continue as a guest",
-      "guest_continue": "Continue"
+      "cancel": "Resume Shopping?",
+      "guest_title": "Guest Checkout",
+      "guest_continue": "Checkout as a Guest"
     },
     "orders": {
       "title": "Order History",
@@ -191,11 +191,11 @@
       "subtotal": "Subtotal"
     },
     "recover_password": {
-      "title": "Reset your password",
-      "email": "Email",
-      "submit": "Submit",
+      "title": "Reset Password",
+      "email": "Email Address",
+      "submit": "Reset Password",
       "cancel": "Cancel",
-      "subtext": "We will send you an email to reset your password.",
+      "subtext": "We will send you an email to reset your password. If you're still having problems, perhaps you need to",
       "success": "We've sent you an email with a link to update your password."
     },
     "reset_password": {
@@ -206,7 +206,7 @@
       "submit": "Reset Password"
     },
     "register": {
-      "title": "Create Account",
+      "title": "Create an Account",
       "first_name": "First Name",
       "last_name": "Last Name",
       "email": "Email",
