@@ -3,7 +3,6 @@
  * Copyright 2011-2015 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-
 // Core variables and mixins
 @import "bootstrap/variables";
 @import "bootstrap/mixins";
@@ -14,10 +13,10 @@
 // @import "bootstrap/glyphicons";
 
 // Core CSS
-// @import "bootstrap/scaffolding";
+@import "bootstrap/scaffolding";
 // @import "bootstrap/type";
 // @import "bootstrap/code";
-∂@import "bootstrap/grid";
+@import "bootstrap/grid";
 // @import "bootstrap/tables";
 // @import "bootstrap/forms";
 // @import "bootstrap/buttons";
@@ -52,5 +51,5 @@
 // @import "bootstrap/carousel";
 
 // Utility classes
-// @import "bootstrap/utilities";
-// @import "bootstrap/responsive-utilities";
+@import "bootstrap/utilities";
+@import "bootstrap/responsive-utilities";
