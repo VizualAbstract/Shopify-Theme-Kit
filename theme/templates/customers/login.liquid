@@ -20,7 +20,6 @@
         <p><a href="{{ shop.url }}">{{ 'customer.login.cancel' | t }}</a></p>
       </div>
     {% endif %}
-
     <div class="col-md-6">
       {% comment %}
         If a user has successfully requested a new password, the form.posted_successfully? variable
@@ -31,12 +30,12 @@
         {{ 'customer.recover_password.success' | t }}
       </div>
       <h2>{{ 'customer.login.title' | t }}</h2>
+      <p>
+        If you're having trouble signing in, please {% comment %}{% if form.password_needed %}{% endcomment %} use
+        <a href="#recover" class="RecoverPassword">{{ 'customer.login.forgot_password' | t }}</a> or
+        {% comment %}{% endif %}{% endcomment %} <a href="/account/register">Register for an Account</a>.
+      </p>
       {% form 'customer_login' %}
-        <p>
-          If you're having trouble signing in, please {% if form.password_needed %} use
-          <a href="#recover" class="RecoverPassword">{{ 'customer.login.forgot_password' | t }}</a> or
-          {% endif %} <a href="/account/register">Register for an Account</a>.
-        </p>
         {{ form.errors | default_errors }}
         <label for="CustomerEmail" class="hidden-label">{{ 'customer.login.email' | t }}</label>
         <input type="email" name="customer[email]" id="CustomerEmail" class="input-full{% if form.errors contains 'email' %} error{% endif %}" placeholder="{{ 'customer.login.email' | t }}" autocorrect="off" autocapitalize="off" autofocus>
@@ -54,7 +53,6 @@
       <p><a href="{{ shop.url }}">{{ 'customer.login.cancel' | t }}</a></p>
     </div>
   </div>
-
   {% comment %} JS shows/hides this form in timber.loginForms() {% endcomment %}
   <div class="row" id="RecoverPasswordForm" style="display: none;">
     <div class="col-md-6">
@@ -66,9 +64,7 @@
       {% form 'recover_customer_password' %}
         {{ form.errors | default_errors }}
         {% comment %} Assign variable to be used after timber.init() is run in theme.liquid {% endcomment %}
-        {% if form.posted_successfully? %}
-          {% assign resetPassword = true %}
-        {% endif %}
+        {% if form.posted_successfully? %} {% assign resetPassword = true %} {% endif %}
         <label for="RecoverEmail" class="hidden-label">{{ 'customer.recover_password.email' | t }}</label>
         <input type="email" value="" name="email" id="RecoverEmail" class="input-full" placeholder="{{ 'customer.recover_password.email' | t }}" autocorrect="off" autocapitalize="off">
         <p>
