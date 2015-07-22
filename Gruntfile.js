@@ -28,7 +28,7 @@ module.exports = function(grunt) {
       },
       scripts: {
         files: ['<%= jshint.files %>'],
-        tasks: ['jshint', 'concat:scripts'],
+        tasks: ['concat:scripts'], // tasks: ['jshint', 'concat:scripts'],
         options: {
           interrupt: true,
           spawn: false,
