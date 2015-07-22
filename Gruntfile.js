@@ -53,9 +53,17 @@ module.exports = function(grunt) {
         src: ['source/**/*.js'],
         dest: 'theme/assets/main.js.liquid',
       },
-      styles: {
-        src: ['source/**/*.scss'],
-        dest: 'theme/assets/styles.scss.liquid',
+      plugin_styles: {
+        src: ['source/styles/00 plugins/*.scss'],
+        dest: 'theme/assets/plugins.scss.liquid',
+      },
+      timber_styles: {
+        src: ['source/styles/01 timber/*.scss'],
+        dest: 'theme/assets/timber.scss.liquid',
+      },
+      theme_styles: {
+        src: ['source/styles/02 theme/*.scss'],
+        dest: 'theme/assets/theme.scss.liquid',
       }
     },
     imagemin: {
