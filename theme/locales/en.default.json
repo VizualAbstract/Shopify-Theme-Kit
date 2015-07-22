@@ -199,7 +199,7 @@
       "success": "We've sent you an email with a link to update your password."
     },
     "reset_password": {
-      "title": "Reset account password",
+      "title": "Reset Your Password",
       "subtext": "Enter a new password for {{ email }}",
       "password": "Password",
       "password_confirm": "Confirm Password",
