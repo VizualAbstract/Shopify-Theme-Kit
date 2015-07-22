@@ -22,8 +22,6 @@ Get organized for your next Shopify theme project, featuring the [Timber (v2.1.2
 * Run `git clone git@github.com:MrPopperRx/Shopify-Theme-Kit.git`
 * Run `npm install` to install NPM packages
 * Run `grunt` to compile files and begin watching the assets folder
-<!-- * Replace reference to `timber.scss.css` in **theme/layout/theme.liquid** on line `31` with `styles.scss.css`
-* Add `{{ 'main.js' | asset_url | script_tag }}` to **theme/layout/theme.liquid** on line `382` -->
 
 ## Additional Resources
 
