@@ -15,10 +15,9 @@
       <p>{{ 'customer.addresses.no_default' | t }}</p>
     {% endif %}
     <p><a href="#" onclick="Shopify.CustomerAddress.toggleNewForm(); return false;">{{ 'customer.addresses.add_new' | t }}</a></p>
-    <hr />
     {% comment %} Add address form, hidden by default {% endcomment %}
     <div id="AddAddress" style="display: none;">
-      <h2>{{ 'customer.addresses.add_new' | t }}</h2>
+      <h2>{{ 'customer.addresses.new_address' | t }}</h2>
       {% form 'customer_address', customer.new_address %}
 
         <label for="AddressFirstNameNew">{{ 'customer.addresses.first_name' | t }}</label>
@@ -64,6 +63,7 @@
         </p>
       {% endform %}
     </div>
+    <hr>
     <p><a href="/account">{{ 'customer.addresses.return' | t }}</a></p>
   </div>
   <div class="col-sm-6">
