@@ -130,9 +130,9 @@
       "cancel": "Decline Invitation"
     },
     "addresses": {
-      "title": "Your Addresses",
+      "title": "Manage Account Address",
       "default": "Default",
-      "add_new": "Add a New Address",
+      "add_new": "Add New Address",
       "edit_address": "Edit address",
       "first_name": "First Name",
       "last_name": "Last Name",
@@ -144,12 +144,14 @@
       "province": "Province",
       "zip": "Postal/Zip Code",
       "phone": "Phone",
-      "set_default": "Set as default address",
-      "add": "Add Address",
+      "set_default": "Set as Default Address?",
+      "no_default": "You haven't provided us with an address yet.",
+      "add": "Add This Address",
       "update": "Update Address",
       "cancel": "Cancel",
-      "edit": "Edit",
-      "delete": "Delete"
+      "edit": "Modify",
+      "delete": "Delete",
+      "return": "Cancel & Return to Account Details"
     },
     "login": {
       "title": "Customer Login",
