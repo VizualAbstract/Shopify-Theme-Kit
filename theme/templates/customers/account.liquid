@@ -14,16 +14,10 @@
         {% if customer.default_address.company %}
           {{ customer.default_address.company }}<br>
         {% endif %}
-        <strong>
-          {{ customer.default_address.address1 }}
-          {% if customer.default_address.address2 != nil %}
-            {{ customer.default_address.address2 }}
-          {% endif %}
-          <br>
-        </strong>
-        {{ customer.default_address.city | capitalize }}
+        <strong>{{ customer.default_address.street }}</strong><br>
+        {{ customer.default_address.city | capitalize }},
         {% if customer.default_address.province_code %}
-          , {{ customer.default_address.province_code }}
+          {{ customer.default_address.province_code }}
         {% endif %}
         {{ customer.default_address.zip | upcase }}<br>
         {% if customer.default_address.country %}

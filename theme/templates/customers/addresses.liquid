@@ -82,7 +82,7 @@
               {{ address.company }}<br>
             {% endif %}
             <strong>{{ address.street }}</strong><br>
-            {{ address.city | capitalize }} {% if address.province_code %}, {{ address.province_code }}{% endif %} {{ address.zip | upcase }}<br>
+            {{ address.city | capitalize }}, {% if address.province_code %} {{ address.province_code }}{% endif %} {{ address.zip | upcase }}<br>
             {% if address.country %}{{ address.country }}<br>{% endif %}
             {{ address.phone }}
           </address>
