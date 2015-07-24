@@ -128,7 +128,7 @@
       "password": "Password",
       "password_confirm": "Confirm Password",
       "submit": "Activate Account",
-      "cancel": "Decline Invitation"
+      "cancel": "Decline"
     },
     "addresses": {
       "title": "Your Address Book",
