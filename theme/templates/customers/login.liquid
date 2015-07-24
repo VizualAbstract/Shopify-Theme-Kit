@@ -5,16 +5,14 @@
       <div class="col-md-6" id="CustomerGuestCheckout">
         <h2>{{ 'customer.login.guest_title' | t }}</h2>
         <p>
-          Account registration is optional at <em>{{ shop.name }}</em>. You can continue
-          as a <strong>Guest</strong>, or you can
-          <strong><a href="/account/register/">Register</a></strong> for an account.
+          {{ 'customer.login.guest_directions_html' | t: shop_name: shop.name }}
         </p>
         <p>
-          You can sign up for an account after the checkout process.
+          {{ 'customer.login.guest_sub_directions' | t }}
         </p>
         {% form 'guest_login' %}
           <input type="submit" class="btn btn--primary" value="{{ 'customer.login.guest_continue' | t }}">
-          <a href="/account/register/" class="btn btn--secondary">Register</a>
+          <a href="/account/register/" class="btn btn--secondary">{{ 'customer.login.register' | t }}</a>
         {% endform %}
         <p><a href="{{ shop.url }}">{{ 'customer.login.cancel' | t }}</a></p>
       </div>
@@ -30,8 +28,7 @@
       </div>
       <h2>{{ 'customer.login.title' | t }}</h2>
       <p>
-        If you're having trouble signing in, please use <a href="#recover" class="RecoverPassword">{{ 'customer.login.forgot_password' | t }}</a> or
-        <a href="/account/register">Register for an Account</a>.
+        {{ 'customer.login.having_trouble' | t }} <a href="#recover" class="RecoverPassword">{{ 'customer.login.forgot_password' | t }}</a> {{ 'customer.login.register_html' | t }}
       </p>
       {% form 'customer_login' %}
         {{ form.errors | default_errors }}

@@ -157,13 +157,18 @@
     },
     "login": {
       "title": "Customer Login",
+      "guest_directions_html": "Account registration is optional at <em>{{ shop_name }}</em>. You can continue as a <strong>Guest</strong>, or you can <strong><a href=\"/account/register/\">Register</a></strong> for an account.",
+      "guest_sub_directions": "You can sign up for an account after the checkout process.",
       "email": "Email Address",
       "password": "Password",
       "forgot_password": "Password Recovery",
       "sign_in": "Sign In",
       "cancel": "Resume Shopping?",
       "guest_title": "Guest Checkout",
-      "guest_continue": "Checkout as a Guest"
+      "guest_continue": "Checkout as a Guest",
+      "register": "Register",
+      "register_html": "or <a href=\"/account/register\">Register</a>",
+      "having_trouble": "If you're having trouble signing in, please use"
     },
     "orders": {
       "title": "Order History",
