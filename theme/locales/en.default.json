@@ -131,11 +131,12 @@
       "cancel": "Decline"
     },
     "addresses": {
-      "title": "Your Address Book",
+      "title": "Address Book",
+      "subtitle": "Stored Addresses",
       "default": "Default",
       "add_new": "Add New Address",
       "new_address": "New Address",
-      "edit_address": "Edit address",
+      "edit_address": "Edit Address",
       "first_name": "First Name",
       "last_name": "Last Name",
       "company": "Company",
@@ -177,7 +178,8 @@
       "payment_status": "Payment Status",
       "fulfillment_status": "Fulfillment Status",
       "total": "Total",
-      "none": "You haven't placed any orders yet."
+      "none": "You haven't placed any orders yet.",
+      "return": "Return to Account Details"
     },
     "order": {
       "title": "Order {{ name }}",

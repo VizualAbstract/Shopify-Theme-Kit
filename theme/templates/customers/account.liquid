@@ -3,9 +3,8 @@
   For all available customer liquid tags:
     - http://docs.shopify.com/themes/liquid-variables/customer
 {% endcomment %}
-
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-sm-4">
     <h1>{{ 'customer.account.title' | t }}</h1>
     <h5>{{ customer.name }}</h5>
     <p>{{ customer.email }}</p>
@@ -31,7 +30,7 @@
       <a id="view_address" href="/account/addresses">{{ 'customer.addresses.add_new' | t }}</a>
     {% endif %}
   </div>
-  <div class="col-md-6">
+  <div class="col-sm-8">
     <h2>{{ 'customer.orders.title' | t }}</h2>
     {% comment %} If we have past orders, loop through each one {% endcomment %}
     {% paginate customer.orders by 20 %}

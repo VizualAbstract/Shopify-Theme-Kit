@@ -1,6 +1,6 @@
 <!-- /templates/customers/order.liquid -->
 <div class="row">
-  <div class="col-md-5">
+  <div class="col-md-4">
     <h5>{{ 'customer.order.billing_address' | t }}</h5>
     <p><strong>{{ 'customer.order.payment_status' | t }}:</strong> {{ order.financial_status_label }}</p>
     <address>
@@ -39,7 +39,7 @@
       {{ order.shipping_address.phone }}
     </address>
   </div>
-  <div class="col-md-7">
+  <div class="col-md-8">
     <h1>{{ 'customer.order.title' | t: name: order.name }}</h1>
     {% if order.cancelled %}
       <div class="errors">
@@ -51,7 +51,6 @@
     {% else %}
       <h5>Placed on {{ order.created_at | date: "%B %d, %Y %I:%M%p" }}</h5>
     {% endif %}
-    <hr>
     <table>
       <thead>
         <tr>
@@ -111,5 +110,6 @@
         </tr>
       </tfoot>
     </table>
+    <p><a href="/account">{{ 'customer.orders.return' | t }}</a></p>
   </div>
 </div>

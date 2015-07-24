@@ -2,7 +2,7 @@
 <div class="container">
   <div class="row" id="CustomerLoginForm">
     {% if shop.checkout.guest_login %}
-      <div class="col-md-6" id="CustomerGuestCheckout">
+      <div class="col-sm-6" id="CustomerGuestCheckout">
         <h2>{{ 'customer.login.guest_title' | t }}</h2>
         <p>
           {{ 'customer.login.guest_directions_html' | t: shop_name: shop.name }}
@@ -17,7 +17,7 @@
         <p><a href="{{ shop.url }}">{{ 'customer.login.cancel' | t }}</a></p>
       </div>
     {% endif %}
-    <div class="col-md-6">
+    <div class="col-sm-6{% unless shop.checkout.guest_login %} col-sm-offset-3{% endunless %}">
       {% comment %}
         If a user has successfully requested a new password, the form.posted_successfully? variable
         is set to true within the 'recover_customer_password' form only. Within that form you'll see
@@ -26,7 +26,7 @@
       <div class="note form-success" id="ResetSuccess" style="display:none;">
         {{ 'customer.recover_password.success' | t }}
       </div>
-      <h2>{{ 'customer.login.title' | t }}</h2>
+      <h1>{{ 'customer.login.title' | t }}</h1>
       <p>
         {{ 'customer.login.having_trouble' | t }} <a href="#recover" class="RecoverPassword">{{ 'customer.login.forgot_password' | t }}</a> {{ 'customer.login.register_html' | t }}
       </p>
@@ -50,7 +50,7 @@
   </div>
   {% comment %} JS shows/hides this form in timber.loginForms() {% endcomment %}
   <div class="row" id="RecoverPasswordForm" style="display: none;">
-    <div class="col-md-6">
+    <div class="col-sm-6{% unless shop.checkout.guest_login %} col-sm-offset-3{% endunless %}">
       <h2>{{ 'customer.recover_password.title' | t }}</h2>
       <p>
         {{ 'customer.recover_password.subtext' | t }}

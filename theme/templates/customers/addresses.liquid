@@ -14,10 +14,9 @@
     {% if customer.default_address == nil %}
       <p>{{ 'customer.addresses.no_default' | t }}</p>
     {% endif %}
-    <p><a href="#" onclick="Shopify.CustomerAddress.toggleNewForm(); return false;">{{ 'customer.addresses.add_new' | t }}</a></p>
     {% comment %} Add address form, hidden by default {% endcomment %}
     <div id="AddAddress" style="display: none;">
-      <h2>{{ 'customer.addresses.new_address' | t }}</h2>
+      <h2 class="visually-hidden">{{ 'customer.addresses.new_address' | t }}</h2>
       {% form 'customer_address', customer.new_address %}
 
         <label for="AddressFirstNameNew">{{ 'customer.addresses.first_name' | t }}</label>
@@ -63,6 +62,7 @@
         </p>
       {% endform %}
     </div>
+    <p><a href="#" onclick="Shopify.CustomerAddress.toggleNewForm(); return false;">{{ 'customer.addresses.add_new' | t }}</a></p>
     <hr>
     <p><a href="/account">{{ 'customer.addresses.return' | t }}</a></p>
   </div>
@@ -74,9 +74,9 @@
       {% endcomment %}
       {% for address in customer.addresses %}
         <div id="view_address_{{address.id}}">
-          <h3>
+          <h4>
             {{ address.first_name | capitalize }} {{address.last_name | capitalize }} {% if address == customer.default_address %}<small>{{ 'customer.addresses.default' | t }}</small>{% endif %}
-          </h3>
+          </h4>
           <address>
             {% if address.company %}
               {{ address.company }}<br>
