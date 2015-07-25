@@ -4,7 +4,7 @@ module.exports = function(grunt) {
     sass: {
       dist: {
         options: {
-          style: 'expanded',
+          style: 'nested',
           watch: false,
         },
         files: {
@@ -28,11 +28,11 @@ module.exports = function(grunt) {
         dest: 'theme/assets/plugins.scss.liquid',
       },
       timber_styles: {
-        src: ['source/styles/02 timber/**/*.scss'],
+        src: ['source/styles/bootstrap/bootstrap/_variables.scss','source/styles/02 timber/**/*.scss'],
         dest: 'theme/assets/timber.scss.liquid',
       },
       theme_styles: {
-        src: ['source/styles/03 theme/**/*.scss'],
+        src: ['source/styles/bootstrap/bootstrap/_variables.scss','source/styles/03 theme/**/*.scss'],
         dest: 'theme/assets/theme.scss.liquid',
       }
     },

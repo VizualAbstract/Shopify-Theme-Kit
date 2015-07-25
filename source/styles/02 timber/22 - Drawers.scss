@@ -2,7 +2,7 @@
   #Drawers
 ==============================================================================*/
 .js-drawer-open {
-  @media screen and (max-width: 767px){
+  @media (max-width: $screen-sm-max){
     overflow: hidden;
     /* Should only be 'visible' for mobile, if that's the direction we take it in */
   }
@@ -11,7 +11,7 @@
 .drawer {
   display: none;
   position: fixed;
-  @media screen and (min-width: 768px){
+  @media (min-width: $screen-md-min){
     position: absolute;
     /* Should only be 'fixed' for mobile, if that's the direction we take it in */
   }
@@ -72,8 +72,7 @@
   }
 }
 
-@media screen and (min-width: 768px){
-
+@media (min-width: $screen-md-min){
   /* The below 3 sections should only be visible for desktop. the above, for mobile, was commented out */
   .drawer--left,
   .drawer--right {
@@ -119,7 +118,7 @@
     @include transform(translateX(-$drawerCartWidth));
   }
 
- @media screen and (min-width: 768px){
+@media (min-width: $screen-md-min){
   .js-drawer-open-left &,
   .js-drawer-open-right & {
     @include transform(translateY($drawerCartWidth));
