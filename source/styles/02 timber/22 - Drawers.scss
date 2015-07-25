@@ -2,12 +2,19 @@
   #Drawers
 ==============================================================================*/
 .js-drawer-open {
-  overflow: hidden;
+  @media screen and (max-width: 767px){
+    overflow: hidden;
+    /* Should only be 'visible' for mobile, if that's the direction we take it in */
+  }
 }
 
 .drawer {
   display: none;
   position: fixed;
+  @media screen and (min-width: 768px){
+    position: absolute;
+    /* Should only be 'fixed' for mobile, if that's the direction we take it in */
+  }
   overflow-y: auto;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
@@ -65,6 +72,38 @@
   }
 }
 
+@media screen and (min-width: 768px){
+
+  /* The below 3 sections should only be visible for desktop. the above, for mobile, was commented out */
+  .drawer--left,
+  .drawer--right {
+    width: 100%;
+    max-width: 100%;
+    height: $drawerCartWidth;
+    top: -$drawerCartWidth;
+    display: block;
+    left: 0;
+    right: 0;
+    border-bottom: 1px solid $colorDrawerBorder;
+    .js-drawer-open-left &,
+    .js-drawer-open-right & {
+      .lt-ie9 & {
+        top: 0;
+      }
+    }
+  }
+  .drawer--right {
+    .js-drawer-open-right & {
+      @include transform(translateY($drawerCartWidth));
+    }
+  }
+  .drawer--left {
+    .js-drawer-open-left & {
+      @include transform(translateY($drawerCartWidth));
+    }
+  }
+}
+
 #PageContainer {
   overflow: hidden;
 }
@@ -79,6 +118,13 @@
   .js-drawer-open-right & {
     @include transform(translateX(-$drawerCartWidth));
   }
+
+ @media screen and (min-width: 768px){
+  .js-drawer-open-left &,
+  .js-drawer-open-right & {
+    @include transform(translateY($drawerCartWidth));
+  }
+ }
 }
 
 .drawer__header {
