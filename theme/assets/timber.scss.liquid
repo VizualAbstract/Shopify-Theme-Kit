@@ -2892,7 +2892,7 @@ label.error {
   #Drawers
 ==============================================================================*/
 .js-drawer-open {
-  @media (max-width: $screen-sm-max){
+  @media (max-width: $screen-xs-max){
     overflow: hidden;
     /* Should only be 'visible' for mobile, if that's the direction we take it in */
   }
@@ -2901,7 +2901,7 @@ label.error {
 .drawer {
   display: none;
   position: fixed;
-  @media (min-width: $screen-md-min){
+  @media (min-width: $screen-sm-min){
     position: absolute;
     /* Should only be 'fixed' for mobile, if that's the direction we take it in */
   }
@@ -2962,7 +2962,7 @@ label.error {
   }
 }
 
-@media (min-width: $screen-md-min){
+@media (min-width: $screen-sm-min){
   /* The below 3 sections should only be visible for desktop. the above, for mobile, was commented out */
   .drawer--left,
   .drawer--right {
@@ -3008,7 +3008,7 @@ label.error {
     @include transform(translateX(-$drawerCartWidth));
   }
 
-@media (min-width: $screen-md-min){
+@media (min-width: $screen-sm-min){
   .js-drawer-open-left &,
   .js-drawer-open-right & {
     @include transform(translateY($drawerCartWidth));

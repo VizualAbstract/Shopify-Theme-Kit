@@ -299,7 +299,8 @@ var ajaxCart = (function(module, $) {
         itemMinus: cartItem.quantity - 1,
         itemQty: cartItem.quantity,
         price: Shopify.formatMoney(cartItem.price, settings.moneyFormat),
-        vendor: cartItem.vendor
+        vendor: cartItem.vendor,
+        totalPrice: Shopify.formatMoney(cartItem.price * cartItem.quantity, settings.moneyFormat)
       };
 
       items.push(item);
