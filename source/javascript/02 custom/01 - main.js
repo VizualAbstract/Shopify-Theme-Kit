@@ -4,14 +4,15 @@
   Version:
 ---------------------------------------- */
 $(function(){
-
-	var $carouselHome = $('.homepage-carousel');
-
+	var $carouselHome = $('.carousel-wrapper .carousel');
 	$carouselHome.slick({
-		'fade': true,
+		'autoplay': true,
+		'autoplaySpeed': 3000,
+		'centerMode': true,
 		'dots': true,
-		'delay': 3000,
-		'transition': 750
+		'draggable': true,
+		'fade': true,
+		'pauseOnHover': false,
+		'speed': 400,
 	});
-
 });
