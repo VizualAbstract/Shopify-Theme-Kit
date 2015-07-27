@@ -2603,7 +2603,8 @@ label.error {
 .site-header {
   background: $colorBody;
   > .wrapper {
-    padding: ($gutter / 2) 0;
+    padding-top: ($gutter / 2);
+    padding-bottom: ($gutter / 2);
   }
 
   .grid--table {
@@ -2902,9 +2903,15 @@ label.error {
 }
 
 .js-drawer-open {
+  .site-footer {
+    padding-bottom: ($drawerNavWidth + ($gutter * 2));
+  }
   @media (max-width: $screen-xs-max){
     overflow: hidden;
     /* Should only be 'visible' for mobile, if that's the direction we take it in */
+    .site-footer {
+      padding-bottom: 0px;
+    }
   }
 }
 
@@ -2973,14 +2980,17 @@ label.error {
 }
 
 @media (max-width: $screen-xs-max){
-  .site-header {
+  .site-header,
+  .site-footer {
     transition: $drawerTransition;
   }
-  .js-drawer-open-right .site-header {
-    @include transform(translateX(-$drawerCartWidth));
-  }
-  .js-drawer-open-left .site-header {
+  .js-drawer-open-left .site-header,
+  .js-drawer-open-left .site-footer {
     @include transform(translateX($drawerCartWidth));
+  }
+  .js-drawer-open-right .site-header,
+  .js-drawer-open-right .site-footer {
+    @include transform(translateX(-$drawerCartWidth));
   }
 }
 

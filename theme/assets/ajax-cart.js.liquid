@@ -328,6 +328,7 @@ var ajaxCart = (function(module, $) {
 
     // Add or remove from the quantity
     $body.on('click', '.ajaxcart__qty-adjust', function() {
+      console.log('clicked');
       var $el = $(this),
           line = $el.data('line'),
           $qtySelector = $el.siblings('.ajaxcart__qty-num'),

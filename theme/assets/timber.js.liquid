@@ -346,7 +346,7 @@ timber.Drawers = (function () {
 
     this.$nodes = {
       parent: $('body, html'),
-      page: $('#PageContainer'),
+      page: $('#PageContainer main, .site-header, .site-footer'), {% comment %} Elements that will close the drawer when clicked {% endcomment %}
       moved: $('.is-moved-by-drawer')
     };
 
@@ -418,10 +418,12 @@ timber.Drawers = (function () {
       return false;
     });
 
+    {% comment %} The below allows the closing of the drawer on certain targeted areas. See line 349 {% endcomment %}
     this.$nodes.page.on('click.drawer', $.proxy(function () {
-      this.close();
-      return false;
-    }, this));
+          this.close();
+          return false;
+        }, this));
+
   };
 
   Drawer.prototype.close = function () {
