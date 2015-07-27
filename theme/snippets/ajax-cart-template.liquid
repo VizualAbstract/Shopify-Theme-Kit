@@ -20,7 +20,7 @@
                         <div class="col-sm-2">
                           <a href="{{url}}" class="ajaxcart__product-image"><img src="{{img}}" alt=""></a>
                         </div>
-                        <div class="col-sm-5">
+                        <div class="col-sm-7">
                           <h5><a href="{{url}}" class="ajaxcart__product-name">{{name}}</a></h5>
                           <p>
                             {{#if variation}}
@@ -41,21 +41,17 @@
                             Price: {{{price}}} / <strong>{{{totalPrice}}}</strong>
                           </div>
                         </div>
-                        <div class="col-sm-5">
-                          <div class="display-table">
-                            <div class="grid__item display-table-cell one-half">
-                              <div class="ajaxcart__qty">
-                                <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--minus icon-fallback-text" data-id="{{id}}" data-qty="{{itemMinus}}" data-line="{{line}}">
-                                  <span class="icon icon-minus" aria-hidden="true"></span>
-                                  <span class="fallback-text">&minus;</span>
-                                </button>
-                                <input type="text" name="updates[]" class="ajaxcart__qty-num" value="{{itemQty}}" min="0" data-id="{{id}}" data-line="{{line}}" aria-label="quantity" pattern="[0-9]*">
-                                <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--plus icon-fallback-text" data-id="{{id}}" data-line="{{line}}" data-qty="{{itemAdd}}">
-                                  <span class="icon icon-plus" aria-hidden="true"></span>
-                                  <span class="fallback-text">+</span>
-                                </button>
-                              </div>
-                            </div>
+                        <div class="col-sm-3">
+                          <div class="ajaxcart__qty">
+                            <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--minus icon-fallback-text" data-id="{{id}}" data-qty="{{itemMinus}}" data-line="{{line}}">
+                              <span class="icon icon-minus" aria-hidden="true"></span>
+                              <span class="fallback-text">&minus;</span>
+                            </button>
+                            <input type="text" name="updates[]" class="ajaxcart__qty-num" value="{{itemQty}}" min="0" data-id="{{id}}" data-line="{{line}}" aria-label="quantity" pattern="[0-9]*">
+                            <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--plus icon-fallback-text" data-id="{{id}}" data-line="{{line}}" data-qty="{{itemAdd}}">
+                              <span class="icon icon-plus" aria-hidden="true"></span>
+                              <span class="fallback-text">+</span>
+                            </button>
                           </div>
                         </div>
                       </div>
