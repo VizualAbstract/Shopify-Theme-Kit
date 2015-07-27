@@ -156,6 +156,16 @@
         "label": "Facebook link"
       },
       {
+        "type": "text",
+        "id": "social_instagram_link",
+        "label": "Instagram link"
+      },
+      {
+        "type": "text",
+        "id": "social_pinterest_link",
+        "label": "Pinterest link"
+      },
+      {
         "type": "checkbox",
         "id": "footer_newsletter_enable",
         "label": "Show Newsletter Field"
