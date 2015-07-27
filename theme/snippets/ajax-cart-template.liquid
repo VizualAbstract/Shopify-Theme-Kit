@@ -75,7 +75,7 @@
                 <p>{% endraw %}{{ 'cart.general.subtotal' | t }}{% raw %} <strong>{{{totalPrice}}}</strong></p>
                 <p>{% endraw %}{{ 'cart.general.shipping_at_checkout' | t }}{% raw %}</p>
                 <button type="submit" class="btn btn--primary" name="viewcart">
-                  {% endraw %}{{ 'cart.general.viewcart' | t: count: cart.item_count }}{% raw %}
+                  {% endraw %}{{ 'cart.general.viewcart' | t }}{% raw %} ({{cartTotal}})
                 </button>
                 <button type="submit" class="btn btn--secondary" name="checkout">
                   {% endraw %}{{ 'cart.general.checkout' | t }}{% raw %}

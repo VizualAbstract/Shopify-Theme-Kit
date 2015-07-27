@@ -310,7 +310,8 @@ var ajaxCart = (function(module, $) {
     data = {
       items: items,
       note: cart.note,
-      totalPrice: Shopify.formatMoney(cart.total_price, settings.moneyFormat)
+      totalPrice: Shopify.formatMoney(cart.total_price, settings.moneyFormat),
+      cartTotal: cart.item_count
     }
 
     $cartContainer.append(template(data));

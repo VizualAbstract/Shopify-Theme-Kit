@@ -72,9 +72,9 @@
           {{ 'layout.customer.log_in' | t | customer_login_link }}
         </li>
         {% if shop.customer_accounts_optional %}
-        <li class="mobile-nav__item">
-          {{ 'layout.customer.create_account' | t | customer_register_link }}
-        </li>
+          <li class="mobile-nav__item">
+            {{ 'layout.customer.create_account' | t | customer_register_link }}
+          </li>
         {% endif %}
       {% endif %}
     {% endif %}
