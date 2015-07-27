@@ -1,23 +1,28 @@
 <div class="carousel-wrapper is-moved-by-drawer">
 	<div class="carousel" data-slick='{
-		"autoplay": true,
-		"autoplaySpeed": 3000,
-		"dots": true,
-		"draggable": true,
-		"fade": true,
-		"arrows": true,
-		"infinite": true,
-		"pauseOnHover": false,
-		"speed": 400,
-		"rtl": false}'>
-		<div>
-			<img src="{{ 'slide-1-image.jpg' | asset_url }}" />
-		</div>
-		<div>
-			<img src="{{ 'slide-2-image.jpg' | asset_url }}" />
-		</div>
-		<div>
-			<img src="{{ 'slide-3-image.jpg' | asset_url }}" />
-		</div>
+		"autoplay": {{ settings.carousel_autoplay }},
+		"autoplaySpeed": {{ settings.carousel_autoplaySpeed }},
+		"dots": {{ settings.carousel_dots }},
+		"draggable": {{ settings.carousel_draggable }},
+		"fade": {{ settings.carousel_fade }},
+		"arrows": {{ settings.carousel_arrows }},
+		"infinite": {{ settings.carousel_infinite }},
+		"pauseOnHover": {{ settings.carousel_pauseOnHover }},
+		"speed": {{ settings.carousel_speed }}}'>
+		{% for i in (1..5) %}
+			{% capture 'slide_enabled' %}slide_{{ i }}_enabled{% endcapture %}
+			{% capture 'slide_image' %}slide_{{ i }}.jpg{% endcapture %}
+			{% capture 'slide_url' %}slide_{{ i }}_url{% endcapture %}
+			{% capture 'slide_alt' %}slide_{{ i }}_alt{% endcapture %}
+			{% if settings[slide_enabled] %}
+				<div>
+					{% if settings[slide_url] != "" %}
+						<a href="{{ settings[slide_url] }}"><img src="{{ slide_image | asset_url | img_tag: settings[slide_alt] }}" /></a>
+					{% else %}
+						<img src="{{ slide_image | asset_url }}" />
+					{% endif %}
+				</div>
+			{% endif %}
+		{% endfor %}
 	</div>
 </div>

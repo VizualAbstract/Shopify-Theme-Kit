@@ -177,14 +177,14 @@
       },
       {
         "type": "checkbox",
-        "id": "autoplay",
+        "id": "carousel_autoplay",
         "label": "Autoplay",
         "default": true,
         "info": "Enables auto play of slides"
       },
       {
         "type": "text",
-        "id": "autoplaySpeed",
+        "id": "carousel_autoplaySpeed",
         "label": "Autoplay Speed",
         "default": "3000",
         "info": "Auto play change interval. Miliseconds (3000 = 3sec)",
@@ -192,60 +192,53 @@
       },
       {
         "type": "checkbox",
-        "id": "dots",
+        "id": "carousel_dots",
         "label": "Indicator Dots",
         "default": true,
         "info": "Current slide indicator dots"
       },
       {
         "type": "checkbox",
-        "id": "draggable",
+        "id": "carousel_draggable",
         "label": "Desktop Draggable",
         "default": true,
         "info": "Enables desktop dragging to active slide transition"
       },
       {
         "type": "checkbox",
-        "id": "fade",
+        "id": "carousel_fade",
         "label": "Fade Transition",
         "default": false,
         "info": "Enables fade"
       },
       {
         "type": "checkbox",
-        "id": "arrows",
+        "id": "carousel_arrows",
         "label": "Arrows",
         "default": true,
         "info": "Enable Next/Prev arrows"
       },
       {
         "type": "checkbox",
-        "id": "infinite",
+        "id": "carousel_infinite",
         "label": "Infinite",
         "default": true,
         "info": "Infinite looping"
       },
       {
         "type": "checkbox",
-        "id": "pauseOnHover",
+        "id": "carousel_pauseOnHover",
         "label": "Pause On Hover",
         "default": false,
         "info": "Pauses autoplay on hover"
       },
       {
         "type": "text",
-        "id": "speed",
+        "id": "carousel_speed",
         "label": "Speed",
         "default": "400",
         "info": "Transition speed",
         "placeholder": "400"
-      },
-      {
-        "type": "checkbox",
-        "id": "rtl",
-        "label": "Right-to-Left",
-        "default": false,
-        "info": "Change the slider's direction to become right-to-left. (Not applicable if Fade is enabled)"
       },
       {
         "type": "header",
@@ -256,65 +249,120 @@
         "content": "Images should be the same dimension for best results. Recommended dimensions are 1200 x 500, but you may upload up to a max of 2048 x 900."
       },
       {
+        "type": "checkbox",
+        "id": "slide_1_enabled",
+        "label": "Enable Slide 1",
+        "default": false
+      },
+      {
         "type": "image",
-        "id": "slide-1.jpg",
+        "id": "slide_1.jpg",
         "label": "Slide 1",
         "max-width": 2048,
         "max-height": 900
       },
       {
         "type": "text",
-        "id": "slide-1-url",
+        "id": "slide_1_url",
         "label": "Slide 1 URL",
         "placeholder": "http://store.myshopify.com/collections/all"
       },
       {
+        "type": "text",
+        "id": "slide_1_alt",
+        "label": "Slide 1 Alt Text"
+      },
+      {
+        "type": "checkbox",
+        "id": "slide_2_enabled",
+        "label": "Enable Slide 2",
+        "default": false
+      },
+      {
         "type": "image",
-        "id": "slide-2.jpg",
+        "id": "slide_2.jpg",
         "label": "Slide 2",
         "max-width": 2048,
         "max-height": 900
       },
       {
         "type": "text",
-        "id": "slide-2-url",
+        "id": "slide_2_url",
         "label": "Slide 2 URL"
       },
       {
+        "type": "text",
+        "id": "slide_2_alt",
+        "label": "Slide 2 Alt Text"
+      },
+      {
+        "type": "checkbox",
+        "id": "slide_3_enabled",
+        "label": "Enable Slide 3",
+        "default": false
+      },
+      {
         "type": "image",
-        "id": "slide-3.jpg",
+        "id": "slide_3.jpg",
         "label": "Slide 3",
         "max-width": 2048,
         "max-height": 900
       },
       {
         "type": "text",
-        "id": "slide-3-url",
+        "id": "slide_3_url",
         "label": "Slide 3 URL"
       },
       {
+        "type": "text",
+        "id": "slide_3_alt",
+        "label": "Slide 3 Alt Text"
+      },
+      {
+        "type": "checkbox",
+        "id": "slide_4_enabled",
+        "label": "Enable Slide 4",
+        "default": false
+      },
+      {
         "type": "image",
-        "id": "slide-4.jpg",
+        "id": "slide_4.jpg",
         "label": "Slide 4",
         "max-width": 2048,
         "max-height": 900
       },
       {
         "type": "text",
-        "id": "slide-4-url",
+        "id": "slide_4_url",
         "label": "Slide 4 URL"
       },
       {
+        "type": "text",
+        "id": "slide_4_alt",
+        "label": "Slide 4 Alt Text"
+      },
+      {
+        "type": "checkbox",
+        "id": "slide_5_enabled",
+        "label": "Enable Slide 5",
+        "default": false
+      },
+      {
         "type": "image",
-        "id": "slide-5.jpg",
+        "id": "slide_5.jpg",
         "label": "Slide 5",
         "max-width": 2048,
         "max-height": 900
       },
       {
         "type": "text",
-        "id": "slide-5-url",
+        "id": "slide_5_url",
         "label": "Slide 5 URL"
+      },
+      {
+        "type": "text",
+        "id": "slide_5_alt",
+        "label": "Slide 5 Alt Text"
       }
     ]
   },
