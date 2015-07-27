@@ -3053,7 +3053,8 @@ label.error {
   display: table;
   height: 70px;
   width: 100%;
-  margin-bottom: $gutter / 2;
+  max-width: ($siteWidth - $gutter);
+  margin: 0 auto $gutter / 2;
   border-bottom: 1px solid $colorDrawerBorder;
 }
 
@@ -3065,6 +3066,9 @@ label.error {
 
 .drawer__title {
   width: 100%;
+  @media (min-width: $screen-sm-min){
+    text-align: center;
+  }
 }
 
 .drawer__close {
