@@ -2441,10 +2441,11 @@ label.error {
   }
 }
 
-.input-group-field,
+input.input-group-field,
 .input-group-btn {
   display: table-cell;
   vertical-align: middle;
+  box-sizing: border-box;
   margin: 0;
 }
 
@@ -3002,7 +3003,7 @@ label.error {
     max-width: 100%;
     height: $drawerCartWidth;
     // top: -$drawerCartWidth;
-    top: -100px; // Value had to change due to moving drawer beneath header+nav
+    top: -112px; // Value had to change due to moving drawer beneath header+nav
     display: block;
     left: 0;
     right: 0;

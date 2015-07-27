@@ -242,10 +242,11 @@ label.error {
   }
 }
 
-.input-group-field,
+input.input-group-field,
 .input-group-btn {
   display: table-cell;
   vertical-align: middle;
+  box-sizing: border-box;
   margin: 0;
 }
 
