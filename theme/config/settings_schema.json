@@ -169,6 +169,156 @@
     ]
   },
   {
+    "name": "Carousel",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Carousel Settings"
+      },
+      {
+        "type": "checkbox",
+        "id": "autoplay",
+        "label": "Autoplay",
+        "default": true,
+        "info": "Enables auto play of slides"
+      },
+      {
+        "type": "text",
+        "id": "autoplaySpeed",
+        "label": "Autoplay Speed",
+        "default": "3000",
+        "info": "Auto play change interval. Miliseconds (3000 = 3sec)",
+        "placeholder": "3000"
+      },
+      {
+        "type": "checkbox",
+        "id": "dots",
+        "label": "Indicator Dots",
+        "default": true,
+        "info": "Current slide indicator dots"
+      },
+      {
+        "type": "checkbox",
+        "id": "draggable",
+        "label": "Desktop Draggable",
+        "default": true,
+        "info": "Enables desktop dragging to active slide transition"
+      },
+      {
+        "type": "checkbox",
+        "id": "fade",
+        "label": "Fade Transition",
+        "default": false,
+        "info": "Enables fade"
+      },
+      {
+        "type": "checkbox",
+        "id": "arrows",
+        "label": "Arrows",
+        "default": true,
+        "info": "Enable Next/Prev arrows"
+      },
+      {
+        "type": "checkbox",
+        "id": "infinite",
+        "label": "Infinite",
+        "default": true,
+        "info": "Infinite looping"
+      },
+      {
+        "type": "checkbox",
+        "id": "pauseOnHover",
+        "label": "Pause On Hover",
+        "default": false,
+        "info": "Pauses autoplay on hover"
+      },
+      {
+        "type": "text",
+        "id": "speed",
+        "label": "Speed",
+        "default": "400",
+        "info": "Transition speed",
+        "placeholder": "400"
+      },
+      {
+        "type": "checkbox",
+        "id": "rtl",
+        "label": "Right-to-Left",
+        "default": false,
+        "info": "Change the slider's direction to become right-to-left. (Not applicable if Fade is enabled)"
+      },
+      {
+        "type": "header",
+        "content": "Slides"
+      },
+      {
+        "type": "paragraph",
+        "content": "Images should be the same dimension for best results. Recommended dimensions are 1200 x 500, but you may upload up to a max of 2048 x 900."
+      },
+      {
+        "type": "image",
+        "id": "slide-1.jpg",
+        "label": "Slide 1",
+        "max-width": 2048,
+        "max-height": 900
+      },
+      {
+        "type": "text",
+        "id": "slide-1-url",
+        "label": "Slide 1 URL",
+        "placeholder": "http://store.myshopify.com/collections/all"
+      },
+      {
+        "type": "image",
+        "id": "slide-2.jpg",
+        "label": "Slide 2",
+        "max-width": 2048,
+        "max-height": 900
+      },
+      {
+        "type": "text",
+        "id": "slide-2-url",
+        "label": "Slide 2 URL"
+      },
+      {
+        "type": "image",
+        "id": "slide-3.jpg",
+        "label": "Slide 3",
+        "max-width": 2048,
+        "max-height": 900
+      },
+      {
+        "type": "text",
+        "id": "slide-3-url",
+        "label": "Slide 3 URL"
+      },
+      {
+        "type": "image",
+        "id": "slide-4.jpg",
+        "label": "Slide 4",
+        "max-width": 2048,
+        "max-height": 900
+      },
+      {
+        "type": "text",
+        "id": "slide-4-url",
+        "label": "Slide 4 URL"
+      },
+      {
+        "type": "image",
+        "id": "slide-5.jpg",
+        "label": "Slide 5",
+        "max-width": 2048,
+        "max-height": 900
+      },
+      {
+        "type": "text",
+        "id": "slide-5-url",
+        "label": "Slide 5 URL"
+      }
+    ]
+  },
+  {
     "name": "Cart Page",
     "settings": [
       {
