@@ -5,6 +5,12 @@
 
 .ajaxcart__inner {
   margin-bottom: $gutter;
+  @media (min-width: $screen-sm-min){
+    margin-bottom: 0;
+    max-height: 160px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
 }
 
 .ajaxcart__row {

@@ -2,7 +2,10 @@
   #Site Header
 ==============================================================================*/
 .site-header {
-  padding: ($gutter / 2) 0;
+  background: $colorBody;
+  > .wrapper {
+    padding: ($gutter / 2) 0;
+  }
 
   .grid--table {
     display: table;

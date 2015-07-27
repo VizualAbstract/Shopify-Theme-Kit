@@ -1,6 +1,13 @@
 /*============================================================================
   #Drawers
 ==============================================================================*/
+.site-header {
+  @media (min-width: $screen-sm-min){
+    position: relative;
+    z-index: 999999;
+  }
+}
+
 .js-drawer-open {
   @media (max-width: $screen-xs-max){
     overflow: hidden;
@@ -72,6 +79,18 @@
   }
 }
 
+@media (max-width: $screen-xs-max){
+  .site-header {
+    transition: $drawerTransition;
+  }
+  .js-drawer-open-right .site-header {
+    @include transform(translateX(-$drawerCartWidth));
+  }
+  .js-drawer-open-left .site-header {
+    @include transform(translateX($drawerCartWidth));
+  }
+}
+
 @media (min-width: $screen-sm-min){
   /* The below 3 sections should only be visible for desktop. the above, for mobile, was commented out */
   .drawer--left,
@@ -79,7 +98,8 @@
     width: 100%;
     max-width: 100%;
     height: $drawerCartWidth;
-    top: -$drawerCartWidth;
+    // top: -$drawerCartWidth;
+    top: -100px; // Value had to change due to moving drawer beneath header+nav
     display: block;
     left: 0;
     right: 0;
