@@ -199,13 +199,12 @@
       </nav>
     </header>
     {% include 'drawer' %}
-    {% include 'carousel' %}
+    {% if template == 'index' %}
+      {% include 'carousel' %}
+    {% endif %}
     <main class="wrapper main-content is-moved-by-drawer" role="main">
-
       {{ content_for_layout }}
-
     </main>
-
     <!-- begin site-footer -->
     <footer class="site-footer small--text-center is-moved-by-drawer" role="contentinfo">
       <div class="wrapper">

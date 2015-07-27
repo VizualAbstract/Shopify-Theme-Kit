@@ -1,4 +1,4 @@
-<div class="carousel-wrapper">
+<div class="carousel-wrapper is-moved-by-drawer">
 	<div class="carousel" data-slick='{
 		"autoplay": true,
 		"autoplaySpeed": 3000,
@@ -11,13 +11,13 @@
 		"speed": 400,
 		"rtl": false}'>
 		<div>
-			<img src="http://placehold.it/1200x500.png" />
+			<img src="{{ 'slide-1-image.jpg' | asset_url }}" />
 		</div>
 		<div>
-			<img src="http://placehold.it/1200x500/eee/000.png" />
+			<img src="{{ 'slide-2-image.jpg' | asset_url }}" />
 		</div>
 		<div>
-			<img src="http://placehold.it/1200x500/333/eee.png" />
+			<img src="{{ 'slide-3-image.jpg' | asset_url }}" />
 		</div>
 	</div>
 </div>
