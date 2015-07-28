@@ -3195,9 +3195,20 @@ input.input-group-field,
     display: block;
     margin: 0 auto;
   }
+}
 
+.product-single__thumbnails {
+  font-size: 0;
   li {
+    display: inline-block;
     margin-bottom: $gutter;
+    width: 23%;
+    margin-left: 1.3363%;
+    vertical-align: middle;
+    &:nth-child(4n+1){
+      margin-left: 0;
+      clear: left;
+    }
   }
 }
 /*============================================================================
