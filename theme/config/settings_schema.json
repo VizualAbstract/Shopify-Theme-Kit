@@ -179,12 +179,8 @@
     ]
   },
   {
-    "name": "Carousel",
+    "name": "Carousel Settings",
     "settings": [
-      {
-        "type": "header",
-        "content": "Carousel Settings"
-      },
       {
         "type": "checkbox",
         "id": "carousel_autoplay",
@@ -249,11 +245,12 @@
         "default": "400",
         "info": "Transition speed",
         "placeholder": "400"
-      },
-      {
-        "type": "header",
-        "content": "Slides"
-      },
+      }
+    ]
+  },
+  {
+    "name": "Carousel Slides",
+    "settings": [
       {
         "type": "paragraph",
         "content": "Images should be the same dimension for best results. Recommended dimensions are 1200 x 500, but you may upload up to a max of 2048 x 900."
@@ -373,6 +370,65 @@
         "type": "text",
         "id": "slide_5_alt",
         "label": "Slide 5 Alt Text"
+      }
+    ]
+  },
+  {
+    "name": "Product Grid",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "The following options will control how many products are visible per row. On mobile phones, you can choose between 1 or 2 products per row, for tablet and desktop, you can choose up to 4."
+      },
+      {
+        "type": "radio",
+        "id": "collection_list_col_xs",
+        "label": "Phones",
+        "options": [
+          { "value": "12", "label": "1 column" },
+          { "value": "6", "label": "2 columns" }
+        ],
+        "default": "6",
+        "info": "0px to 768px"
+      },
+      {
+        "type": "radio",
+        "id": "collection_list_col_sm",
+        "label": "Tablets",
+        "options": [
+          { "value": "12", "label": "1 column" },
+          { "value": "6", "label": "2 columns" },
+          { "value": "4", "label": "3 columns" },
+          { "value": "3", "label": "4 columns" }
+        ],
+        "default": "4",
+        "info": "768px to 991px"
+      },
+      {
+        "type": "radio",
+        "id": "collection_list_col_md",
+        "label": "Desktops",
+        "options": [
+          { "value": "12", "label": "1 column" },
+          { "value": "6", "label": "2 columns" },
+          { "value": "4", "label": "3 columns" },
+          { "value": "3", "label": "4 columns" }
+        ],
+        "default": "3",
+        "info": "992px to 1200px"
+      },
+      {
+        "type": "radio",
+        "id": "collection_list_col_lg",
+        "label": "Extra-Wide Displays",
+        "options": [
+          { "value": "12", "label": "1 column" },
+          { "value": "6", "label": "2 columns" },
+          { "value": "4", "label": "3 columns" },
+          { "value": "3", "label": "4 columns" }
+        ],
+        "default": "3",
+        "info": "1200px and greater"
       }
     ]
   },

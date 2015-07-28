@@ -18,7 +18,8 @@
   Set the default grid_item_width if no variable is set
 {% endcomment %}
 {% unless grid_item_width %}
-  {% assign grid_item_width = 'col-xs-6 col-sm-4 col-md-3' %}
+  {% capture 'column_grid' %}col-xs-{{ settings.collection_list_col_xs }} col-sm-{{ settings.collection_list_col_sm }} col-md-{{ settings.collection_list_col_md }} col-lg-{{ settings.collection_list_col_lg }}{% endcapture %}
+  {% assign grid_item_width = column_grid %}
 {% endunless %}
 
 {% comment %}
