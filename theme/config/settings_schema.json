@@ -433,6 +433,76 @@
     ]
   },
   {
+    "name": "Product Photo Settings",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "product_carousel_autoplay",
+        "label": "Autoplay",
+        "default": false,
+        "info": "Enables auto play of slides"
+      },
+      {
+        "type": "text",
+        "id": "product_carousel_autoplaySpeed",
+        "label": "Autoplay Speed",
+        "default": "2000",
+        "info": "Auto play change interval. Miliseconds (3000 = 3sec)",
+        "placeholder": "3000"
+      },
+      {
+        "type": "checkbox",
+        "id": "product_carousel_dots",
+        "label": "Indicator Dots",
+        "default": true,
+        "info": "Current slide indicator dots"
+      },
+      {
+        "type": "checkbox",
+        "id": "product_carousel_draggable",
+        "label": "Desktop Draggable",
+        "default": true,
+        "info": "Enables desktop dragging to active slide transition"
+      },
+      {
+        "type": "checkbox",
+        "id": "product_carousel_fade",
+        "label": "Fade Transition",
+        "default": true,
+        "info": "Enables fade"
+      },
+      {
+        "type": "checkbox",
+        "id": "product_carousel_arrows",
+        "label": "Arrows",
+        "default": true,
+        "info": "Enable Next/Prev arrows"
+      },
+      {
+        "type": "checkbox",
+        "id": "product_carousel_infinite",
+        "label": "Infinite",
+        "default": true,
+        "info": "Infinite looping"
+      },
+      {
+        "type": "checkbox",
+        "id": "product_carousel_pauseOnHover",
+        "label": "Pause On Hover",
+        "default": false,
+        "info": "Pauses autoplay on hover"
+      },
+      {
+        "type": "text",
+        "id": "product_carousel_speed",
+        "label": "Speed",
+        "default": "400",
+        "info": "Transition speed",
+        "placeholder": "400"
+      }
+    ]
+  },
+  {
     "name": "Cart Page",
     "settings": [
       {
