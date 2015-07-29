@@ -150,6 +150,7 @@
   };
 
   jQuery(function($) {
+
     var $carouselProduct = $('.product-gallery'),
         $carouselThumbnails = $('.product-single__thumbnails');
 
@@ -166,6 +167,8 @@
       enableHistoryState: true
     });
 
+
+
     // Add label if only one product option and it isn't 'Title'. Could be 'Size'.
     {% if product.options.size == 1 and product.options.first != 'Title' %}
       $('.selector-wrapper:eq(0)').prepend('<label for="productSelect-option-0">{{ product.options.first | escape }}</label>');
@@ -175,5 +178,7 @@
     {% if product.variants.size == 1 and product.variants.first.title contains 'Default' %}
       $('.selector-wrapper').hide();
     {% endif %}
+
+    $('.selector-wrapper select').dropkick();
   });
 </script>

@@ -1,0 +1,262 @@
+// Mixins with weird names to avoid overwrites
+
+@mixin dk-pre($property, $value, $prefixes) {
+  #{$property}: $value;
+  @each $prefix in $prefixes {
+    -#{$prefix}-#{$property}: $value;
+  }
+}
+
+@mixin dk-bxsz($box) {
+  @include dk-pre(box-sizing, $box, webkit moz);
+}
+
+@mixin dk-txtflow($text) {
+  @include dk-pre(text-overflow, $text, o);
+}
+
+$dk-color-aux: #000 !default;
+$dk-border-color: #ccc !default;
+$dk-border-color-aux: #8c8c8c !default;
+$dk-border-radius: 2px !default;
+$dk-disabled-color: #ececec !default;
+$dk-select-color: #fff !default;
+$dk-select-bg-color: #eee !default;
+$dk-dropdown-bg-color: #fff !default;
+$dk-font-weight: 700 !default;
+$dk-text-shadow: 1px 1px 0px #fff !default;
+$dk-dropdown-box-shadow: 0 0 14px rgba(0,0,0,0.2) !default;
+$dk-dropdown-seperator: 1px solid #eee !default;
+
+.dk-select,
+.dk-select *,
+.dk-select *:before,
+.dk-select *:after,
+.dk-select-multi,
+.dk-select-multi *,
+.dk-select-multi *:before,
+.dk-select-multi *:after {
+  @include dk-bxsz(border-box);
+}
+
+.dk-select,
+.dk-select-multi {
+  line-height: 2em;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.dk-selected {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding: 0 1.5em 0 .5em;
+  white-space: nowrap;
+  border: 1px solid $dk-border-color;
+  border-radius: $dk-border-radius;
+  background-color: $dk-select-bg-color;
+  font-weight: $dk-font-weight;
+  text-shadow: $dk-text-shadow;
+
+  @include dk-txtflow(ellipsis);
+  &:before,
+  &:after {
+    position: absolute;
+    right: 0;
+    display: block;
+    content: '';
+  }
+  &:before {
+    top: 50%;
+    margin: -0.125em 0.5em 0 0;
+    border: solid transparent;
+    border-width: 0.35em 0.35em 0;
+    border-top-color: $dk-border-color;
+  }
+  &:after {
+    top: 0;
+    height: 100%;
+    margin: 0 1.5em 0 0;
+  }
+}
+
+.dk-selected-disabled {
+  color: $dk-disabled-color;
+}
+
+.dk-select .dk-select-options {
+  position: absolute;
+  right: 0;
+  left: 0;
+  display: none;
+}
+
+.dk-select-open-up .dk-select-options {
+  bottom: 100%;
+  margin-bottom: -1px;
+  border-radius: $dk-border-radius $dk-border-radius 0 0;
+}
+
+.dk-select-open-down .dk-select-options {
+  top: 100%;
+  margin-top: -1px;
+  border-radius: 0 0 $dk-border-radius $dk-border-radius;
+}
+
+.dk-select-multi .dk-select-options {
+  max-height: 10em;
+}
+
+.dk-select-options {
+  z-index: 100;
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: auto;
+  min-width: 100%;
+  max-height: 10.5em;
+  margin: 0;
+  padding: 0.25rem 0 0;
+  list-style: none;
+  border: 1px solid $dk-border-color;
+  border-radius: $dk-border-radius;
+  background-color: $dk-dropdown-bg-color;
+  box-shadow: $dk-dropdown-box-shadow;
+}
+
+.dk-option-selected {
+  color: $dk-select-color;
+  background-color: $dk-color-aux;
+}
+
+.dk-select-options-highlight .dk-option-selected {
+  color: inherit;
+  background-color: transparent;
+}
+
+.dk-option {
+  padding: 0.2rem 0.5rem;
+  margin: 0;
+  border-bottom: $dk-dropdown-seperator;
+  &:last-child {
+    border-bottom-width: 0px;
+  }
+}
+
+.dk-select-options .dk-option-highlight {
+  color: $dk-select-color;
+  background-color: $dk-color-aux;
+}
+
+.dk-select-options .dk-option-disabled {
+  color: $dk-disabled-color;
+  background-color: transparent;
+}
+
+.dk-optgroup {
+  margin-top: 0.25em;
+  padding: 0.25em 0;
+  border: solid $dk-border-color;
+  border-width: 1px 0;
+  + .dk-option {
+    margin-top: 0.25em;
+  }
+  + .dk-optgroup {
+    margin-top: 0;
+    border-top-width: 0;
+  }
+  &:nth-child(2) {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+  }
+  &:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom-width: 0;
+  }
+}
+
+.dk-optgroup-label {
+  font-weight: bold;
+  width: 100%;
+  padding: 0 0.5em 0.25em;
+}
+
+.dk-optgroup-options {
+  padding-left: 0;
+  list-style: none;
+  li {
+    padding-left: 1.2em;
+  }
+}
+
+.dk-select-open-up .dk-selected {
+  border-color: $dk-border-color-aux;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.dk-select-open-down .dk-selected {
+  border-color: $dk-border-color-aux;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.dk-select-open-up .dk-selected:before,
+.dk-select-open-down .dk-selected:before {
+  border-bottom-color: $dk-border-color-aux;
+}
+
+.dk-select-open-up .dk-selected:after,
+.dk-select-open-down .dk-selected:after {
+  border-left-color: $dk-border-color-aux;
+}
+
+.dk-select-open-up .dk-select-options,
+.dk-select-open-down .dk-select-options,
+.dk-select-multi:focus .dk-select-options {
+  display: block;
+  border-color: $dk-border-color-aux;
+}
+
+.dk-select-multi:hover,
+.dk-select-multi:focus {
+  outline: none;
+}
+
+.dk-selected:hover,
+.dk-selected:focus {
+  border-color: $dk-border-color-aux;
+  outline: none;
+  &:before {
+    border-top-color: $dk-border-color-aux;
+  }
+  &:after {
+    border-left-color: $dk-border-color-aux;
+  }
+}
+
+.dk-select-disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  color: $dk-disabled-color;
+  .dk-selected {
+    &:hover,
+    &:focus {
+      border-color: inherit;
+      &:before {
+        border-top-color: inherit;
+      }
+      &:after {
+        border-left-color: inherit;
+      }
+    }
+  }
+}
+
+select[data-dkcacheid] {
+  display: none ! important;
+}
