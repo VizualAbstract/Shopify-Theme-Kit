@@ -16,7 +16,11 @@
   {% endfor %}
 </div>
 {% if product.images.size > 1 %}
-  <div class="product-single__thumbnails">
+  <div class="product-single__thumbnails" data-slick='{
+    "slidesToShow": 4,
+    "slidesToScroll": 1,
+    "infinite": true,
+    "focusOnSelect": true}'>
     {% for image in product.images %}
       <div>
         <a href="#" data-index="{{ forloop.index0 }}" {% for variant in image.variants | limit: 1 %} data-variantName="{{ variant.title }}"{% endfor %}>
