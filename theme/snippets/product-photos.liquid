@@ -10,7 +10,7 @@
     "speed": {{ settings.product_carousel_speed }}}'>
   {% for image in product.images %}
     <div>
-      <img src="{{ image.src | img_url: 'large' }}" alt="{{ image.alt | escape }}" data-index="{{ forloop.index0 }}">
+      <img src="{{ image.src | img_url: 'grande' }}" alt="{{ image.alt | escape }}" data-index="{{ forloop.index0 }}">
       {% if image.featured_image %}is variant{% endif %}
     </div>
   {% endfor %}

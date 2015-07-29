@@ -18,50 +18,58 @@
     Get first variant, or deep linked one
   {% endcomment %}
   {% assign current_variant = product.selected_or_first_available_variant %}
-
   {% include 'breadcrumb' %}
-
-  <div class="grid product-single">
-    <div class="grid__item large--one-half">
+  <div class="row product-single">
+    <div class="col-sm-7">
       {% include 'product-photos' %}
     </div>
-
-    <div class="grid__item large--one-half">
-
+    <div class="col-sm-5">
       <h1 itemprop="name">{{ product.title }}</h1>
-
       <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
         <meta itemprop="priceCurrency" content="{{ shop.currency }}">
-
         <link itemprop="availability" href="http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}">
-
         {% comment %}
           ID addToCartForm is a selector for the ajax cart plugin
         {% endcomment %}
         <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm" class="form-vertical">
-
+          {% if product.variants.first.sku != NIL || product.sku != NIL %}
+            <div id="ProductSku" class="product-sku" itemprop="sku">
+              {{ product.sku }}{{ product.variants.first.sku }}
+            </div>
+          {% endif %}
+          <span class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
+          <span id="ProductPrice" class="h2" itemprop="price">
+            {{ current_variant.price | money }}
+          </span>
+          {% if product.compare_at_price_max > product.price %}
+            <span class="visually-hidden">{{ 'products.general.sale_price' | t }}</span>
+            <p id="ComparePrice">
+              {{ 'products.product.compare_at' | t }} {{ current_variant.compare_at_price | money }}
+            </p>
+          {% endif %}
+          {% if product.description != NIL %}
+            <div class="product-description rte" itemprop="description">
+              {{ product.description }}
+            </div>
+          {% endif %}
           {% comment %}
             Add product variants as a dropdown.
               - By default, each variant (or combination of variants) will display as its own <option>
               - To separate these into multiple steps, which we suggest, use option_selection.js (see below)
-
             You can leverage jQuery to add a callback on page load and each time the select element changes:
               - Include option_selection.js (as seen at the bottom of this file)
               - This allows you to use JavaScript anytime the variant dropdown changes
               - This also separates out your variant options (ie. size, color, etc.) to separate select elements
-
             For more information on products with multiple options, visit:
               - http://docs.shopify.com/support/your-website/themes/can-i-make-my-theme-use-products-with-multiple-options#update-product-liquid
           {% endcomment %}
           <select name="id" id="productSelect" class="product-single__variants">
             {% for variant in product.variants %}
               {% if variant.available %}
-
                 {% comment %}
                   Note: if you use option_selection.js, your <select> tag will be overwritten, meaning what you have inside <option> will not reflect what you coded below.
                 {% endcomment %}
                 <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
-
               {% else %}
                 <option disabled="disabled">
                   {{ variant.title }} - {{ 'products.product.sold_out' | t }}
@@ -69,33 +77,13 @@
               {% endif %}
             {% endfor %}
           </select>
-
-          <span class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
-          <span id="ProductPrice" class="h2" itemprop="price">
-            {{ current_variant.price | money }}
-          </span>
-
-          {% if product.compare_at_price_max > product.price %}
-            <span class="visually-hidden">{{ 'products.general.sale_price' | t }}</span>
-            <p id="ComparePrice">
-              {{ 'products.product.compare_at' | t }} {{ current_variant.compare_at_price | money }}
-            </p>
-          {% endif %}
-
           <label for="Quantity" class="quantity-selector">{{ 'products.product.quantity' | t }}</label>
           <input type="number" id="Quantity" name="quantity" value="1" min="1" class="quantity-selector">
-
           <button type="submit" name="add" id="AddToCart" class="btn">
             <span id="AddToCartText">{{ 'products.product.add_to_cart' | t }}</span>
           </button>
         </form>
-
       </div>
-
-      <div class="product-description rte" itemprop="description">
-        {{ product.description }}
-      </div>
-
       {% comment %}
         If the user is on a collection product page (ie with /collections/collection-handle/products/product-handle)
         in the URL, we can show next/previous links to other products in the collection.
@@ -116,22 +104,17 @@
           </p>
         {% endif %}
       {% endif %}
-
     </div>
   </div>
-
 </div>
-
 {% comment %}
   To take advantage of a callback on the select dropdown, add option_selection.js
   and customize the JS in timber.productPage as needed.
-
   Currently, timber.productPage does the following:
     - Hides your <select> tag from above
     - Breaks out the product variants into separate product options, if more than one exists
     - Generates a <select> tag for each product option
     - Enables/disables elements based on variant availability
-
   Callback notes:
     - Keep the callback available to the global scope (window.selectCallback) so that advanced
       addons can override it.
@@ -163,6 +146,7 @@
       selector: selector
     });
     switchVariantImage(variant.title);
+    $('#ProductSku').html(variant.sku);
   };
 
   jQuery(function($) {
