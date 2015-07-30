@@ -37,3 +37,34 @@
 .slick-next:before {
   color: #000;
 }
+
+
+
+.product-single__sharing {
+  text-align: center;
+  @media screen and (min-width: 701px){
+    text-align: right;
+  }
+  a {
+    color: #EEE;
+    background: #444;
+    border-radius: 50%;
+    box-sizing: border-box;
+    display: inline-block;
+    height: 24px;
+    line-height: 1;
+    padding: 1px;
+    width: 24px;
+    transition: .2s all;
+    svg {
+      transition: .2s all;
+      fill: #EEE;
+    }
+    &:hover {
+      background: #000;
+      svg {
+        fill: #FFF;
+      }
+    }
+  }
+}
