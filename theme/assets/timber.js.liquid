@@ -347,7 +347,7 @@ timber.Drawers = (function () {
 
     this.$nodes = {
       parent: $('body, html'),
-      page: $('#PageContainer'),
+      page: $('#PageContainer .main, .js-drawer-open-right, .js-drawer-open-center, .js-drawer-open-left'),
       moved: $('.is-moved-by-drawer')
     };
 
@@ -370,9 +370,6 @@ timber.Drawers = (function () {
   };
 
   Drawer.prototype.open = function (evt) {
-    // Close the drawer
-    // this.close();
-
     // Keep track if drawer was opened from a click, or called by another function
     var externalCall = false;
 
