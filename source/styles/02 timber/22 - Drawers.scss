@@ -55,6 +55,21 @@
   }
 }
 
+.drawer--center {
+  width: $drawerNavWidth;
+  left: -$drawerNavWidth;
+  border-right: 1px solid $colorDrawerBorder;
+
+  .js-drawer-open-center & {
+    display: block;
+    @include transform(translateX($drawerNavWidth));
+
+    .lt-ie9 & {
+      left: 0;
+    }
+  }
+}
+
 .drawer--left {
   width: $drawerNavWidth;
   left: -$drawerNavWidth;
@@ -90,6 +105,10 @@
   .site-footer {
     transition: $drawerTransition;
   }
+  .js-drawer-open-center .site-header,
+  .js-drawer-open-center .site-footer {
+    @include transform(translateX($drawerCartWidth));
+  }
   .js-drawer-open-left .site-header,
   .js-drawer-open-left .site-footer {
     @include transform(translateX($drawerCartWidth));
@@ -102,6 +121,7 @@
 
 @media (min-width: $screen-sm-min){
   /* The below 3 sections should only be visible for desktop. the above, for mobile, was commented out */
+  .drawer--center,
   .drawer--left,
   .drawer--right {
     width: 100%;
@@ -113,11 +133,17 @@
     left: 0;
     right: 0;
     border-bottom: 1px solid $colorDrawerBorder;
+    .js-drawer-open-center &,
     .js-drawer-open-left &,
     .js-drawer-open-right & {
       .lt-ie9 & {
         top: 0;
       }
+    }
+  }
+  .drawer--center {
+    .js-drawer-open-center & {
+      @include transform(translateY($drawerCartWidth));
     }
   }
   .drawer--right {
@@ -139,6 +165,10 @@
 .is-moved-by-drawer {
   transition: $drawerTransition;
 
+  .js-drawer-open-center & {
+    @include transform(translateX($drawerNavWidth));
+  }
+
   .js-drawer-open-left & {
     @include transform(translateX($drawerNavWidth));
   }
@@ -148,6 +178,7 @@
   }
 
 @media (min-width: $screen-sm-min){
+  .js-drawer-open-center &,
   .js-drawer-open-left &,
   .js-drawer-open-right & {
     @include transform(translateY($drawerCartWidth));

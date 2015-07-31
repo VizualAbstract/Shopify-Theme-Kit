@@ -182,6 +182,7 @@ timber.accessibleNav = function () {
 };
 
 timber.drawersInit = function () {
+  // timber.CenterDrawer = new timber.Drawers('subMenu', 'center');
   timber.LeftDrawer = new timber.Drawers('NavDrawer', 'left');
   timber.RightDrawer = new timber.Drawers('CartDrawer', 'right', {
     {% if settings.ajax_cart_enable %}'onDrawerOpen': ajaxCart.load{% endif %}
@@ -346,7 +347,7 @@ timber.Drawers = (function () {
 
     this.$nodes = {
       parent: $('body, html'),
-      page: $('#PageContainer main, .site-header, .site-footer'), {% comment %} Elements that will close the drawer when clicked {% endcomment %}
+      page: $('#PageContainer'),
       moved: $('.is-moved-by-drawer')
     };
 
@@ -369,6 +370,9 @@ timber.Drawers = (function () {
   };
 
   Drawer.prototype.open = function (evt) {
+    // Close the drawer
+    // this.close();
+
     // Keep track if drawer was opened from a click, or called by another function
     var externalCall = false;
 
@@ -418,16 +422,15 @@ timber.Drawers = (function () {
       return false;
     });
 
-    {% comment %} The below allows the closing of the drawer on certain targeted areas. See line 349 {% endcomment %}
     this.$nodes.page.on('click.drawer', $.proxy(function () {
-          this.close();
-          return false;
-        }, this));
+      this.close();
+      return false;
+    }, this));
 
   };
 
   Drawer.prototype.close = function () {
-    if (!this.drawerIsOpen) { // don't close a closed drawer
+    if (!this.drawerIsOpen || this.drawerIsOpen) { // don't close a closed drawer
       return;
     }
 

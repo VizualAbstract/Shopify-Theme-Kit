@@ -261,10 +261,10 @@
     },
     "customer": {
       "account": "Account",
-      "logged_in_as_html": "Logged in as {{ first_name }}",
-      "log_out": "Log out",
-      "log_in": "Log in",
-      "create_account": "Create account"
+      "logged_in_as_html": "Welcome, {{ first_name }}",
+      "log_out": "Sign Out",
+      "log_in": "Sign In",
+      "create_account": "Register"
     },
     "footer": {
       "social_title": "Get Connected",

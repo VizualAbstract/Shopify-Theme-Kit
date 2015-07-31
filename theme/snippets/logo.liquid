@@ -1,0 +1,24 @@
+
+{% comment %}
+  Use the uploaded logo from theme settings if enabled.
+  Site name gets precedence with H1 tag on homepage, div on other pages.
+{% endcomment %}
+{% if template == 'index' %}
+  <h1 class="site-header__logo large--left" itemscope itemtype="http://schema.org/Organization">
+{% else %}
+  <div class="h1 site-header__logo large--left" itemscope itemtype="http://schema.org/Organization">
+{% endif %}
+
+  {% if settings.logo_use_image %}
+    <a href="/" itemprop="url" class="site-header__logo-link">
+      <img src="{{ 'logo.png' | asset_url }}" alt="{{ shop.name }}" itemprop="logo">
+    </a>
+  {% else %}
+    <a href="/" itemprop="url">{{ shop.name }}</a>
+  {% endif %}
+
+{% if template == 'index' %}
+  </h1>
+{% else %}
+  </div>
+{% endif %}
