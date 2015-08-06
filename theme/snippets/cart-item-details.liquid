@@ -1,0 +1,49 @@
+<h6 class="cart__title">
+  {{ item.product.title | escape }}
+  <small>{{ item.product.collections.last.title }}</small>
+</h6>
+
+{% if settings.cart_vendor_enable %}
+  <p>{{ item.vendor }}</p>
+{% endif %}
+
+{% for i in (0..2) %}
+  {% if i == 0 %}<p>{% endif %}
+    {% if item.variant.options[i] %}
+      {% unless item.variant.options[i] contains 'Default' | %}
+        <strong>{{ item.product.options[i] }}:</strong> {{ item.variant.options[i] }}<br />
+      {% endunless %}
+    {% endif %}
+  {% if i == 2 %}</p>{% endif %}
+{% endfor %}
+
+{% comment %}
+  Optional, loop through custom product line items if available
+
+  For more info on line item properties, visit:
+    - http://docs.shopify.com/support/your-store/products/how-do-I-collect-additional-information-on-the-product-page-Like-for-a-monogram-engraving-or-customization
+{% endcomment %}
+{% assign property_size = item.properties | size %}
+{% if property_size > 0 %}
+  {% for p in item.properties %}
+    {% unless p.last == blank %}
+      {{ p.first }}:
+      {% comment %}
+        Check if there was an uploaded file associated
+      {% endcomment %}
+      {% if p.last contains '/uploads/' %}
+        <a href="{{ p.last }}">{{ p.last | split: '/' | last }}</a>
+      {% else %}
+        {{ p.last }}
+      {% endif %}
+      <br>
+    {% endunless %}
+  {% endfor %}
+{% endif %}
+
+<p data-label="{{ 'cart.label.price' | t }}">
+  <strong>{{ 'cart.label.price' | t }} {% unless item.price == item.line_price %}</strong>{% endunless %} {{ item.price | money }}{% if item.price == item.line_price %}</strong>{% endif %}<br>
+  {% if item.price < item.line_price %}
+    <strong data-label="{{ 'cart.label.total' | t }}">{{ 'cart.label.total' | t }} {{ item.line_price | money }}</strong>
+  {% endif %}
+</p>
