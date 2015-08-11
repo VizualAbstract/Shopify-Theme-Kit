@@ -56,14 +56,14 @@
     "general": {
       "title": "Shopping Cart",
       "remove": "Remove",
-      "note": "Special instructions for seller",
+      "note": "Additional information you want to share with us.",
       "subtotal": "SUBTOTAL:",
-      "shipping_at_checkout": "Shipping and taxes will be calculated seperately",
+      "shipping_at_checkout": "(Price does not include tax or shipping)",
       "update": "Update Cart",
       "viewcart": "View Cart",
       "checkout": "Check Out",
       "empty": "Your cart is currently empty.",
-      "continue_browsing_html": "Continue browsing <a href=\"/collections/all\">here</a>.",
+      "resume_shopping": "or Resume Shopping",
       "close_cart": "Close Cart"
     },
     "label": {
@@ -71,6 +71,17 @@
       "price": "Price",
       "quantity": "Quantity",
       "total": "Total"
+    },
+    "shipping": {
+      "calculate_shipping_header": "Calculate Shipping:",
+      "state": "State/Territory",
+      "country": "Country",
+      "zip": "Zip/Postal Code",
+      "calculate_shipping": "Calculate Shipping",
+      "calculating_shipping": "Calculating...",
+      "available_rates_html": "There are ${rates.length} shipping rates available for ${address}, starting at",
+      "one_rate_available_html": "There is one shipping rate available for ${address}.",
+      "destination_failure": "We do not ship to this destination."
     }
   },
   "collections": {
