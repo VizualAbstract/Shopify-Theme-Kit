@@ -86,25 +86,37 @@
           </button>
         </form>
       </div>
+      {% if settings.product_shipping_popup_enable || settings.product_questions_popup_enable %}
+        <div class="shopping-links">
+          {% if settings.product_shipping_popup_enable %}
+            <a href="#popup-shipping" class="popup">{{ 'products.product.shipping_info' | t }}</a>
+          {% endif %}
+          {% if settings.product_questions_popup_enable %}
+            <a href="#popup-questions" class="popup">{{ 'products.product.contact_info' | t }}</a>
+          {% endif %}
+        </div>
+      {% endif %}
       {% include 'product-sharing' %}
       {% comment %}
         If the user is on a collection product page (ie with /collections/collection-handle/products/product-handle)
         in the URL, we can show next/previous links to other products in the collection.
       {% endcomment %}
-      {% if collection %}
-        {% if collection.previous_product or collection.next_product %}
-          <p>
-            {% if collection.previous_product %}
-              <span class="left">
-                {{ 'products.general.previous_product_html' | t | link_to: collection.previous_product }}
-              </span>
-            {% endif %}
-            {% if collection.next_product %}
-              <span class="right">
-                {{ 'products.general.next_product_html' | t | link_to: collection.next_product }}
-              </span>
-            {% endif %}
-          </p>
+      {% if settings.product_collection_navigator_enable %}
+        {% if collection %}
+          {% if collection.previous_product or collection.next_product %}
+            <p>
+              {% if collection.previous_product %}
+                <span class="left">
+                  {{ 'products.general.previous_product_html' | t | link_to: collection.previous_product }}
+                </span>
+              {% endif %}
+              {% if collection.next_product %}
+                <span class="right">
+                  {{ 'products.general.next_product_html' | t | link_to: collection.next_product }}
+                </span>
+              {% endif %}
+            </p>
+          {% endif %}
         {% endif %}
       {% endif %}
     </div>
@@ -183,3 +195,19 @@
     $('.selector-wrapper select').dropkick();
   });
 </script>
+
+{% if settings.product_shipping_popup_enable %}
+  <div id="popup-shipping" class="popups" style="display: none;">
+    {% capture 'popup-shipping' %}{{ settings.shipping_and_returns_page }}{% endcapture %}
+    <h3>{{ pages[popup-shipping].title }}</h3>
+    {{ pages[popup-shipping].content }}
+  </div>
+{% endif %}
+
+{% if settings.product_questions_popup_enable %}
+  <div id="popup-questions" class="popups" style="display: none;">
+    {% capture 'popup-questions' %}{{ settings.questions_page }}{% endcapture %}
+    <h3>{{ pages[popup-questions].title }}</h3>
+    {{ pages[popup-questions].content }}
+  </div>
+{% endif %}

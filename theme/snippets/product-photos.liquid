@@ -2,9 +2,11 @@
     "autoplay": {{ settings.product_carousel_autoplay }},
     "autoplaySpeed": {{ settings.product_carousel_autoplaySpeed }},
     "dots": {{ settings.product_carousel_dots }},
+    {% if settings.product_carousel_draggable %}
+    "arrows": false,
+    {% endif %}
     "draggable": {{ settings.product_carousel_draggable }},
     "fade": {{ settings.product_carousel_fade }},
-    "arrows": {{ settings.product_carousel_arrows }},
     "infinite": {{ settings.product_carousel_infinite }},
     "pauseOnHover": {{ settings.product_carousel_pauseOnHover }},
     "speed": {{ settings.product_carousel_speed }}}'>

@@ -168,6 +168,7 @@
       {
         "type": "checkbox",
         "id": "footer_newsletter_enable",
+        "default": false,
         "label": "Show Newsletter Field"
       },
       {
@@ -433,7 +434,7 @@
     ]
   },
   {
-    "name": "Product Photo Settings",
+    "name": "Product Gallery Settings",
     "settings": [
       {
         "type": "checkbox",
@@ -499,6 +500,51 @@
         "default": "400",
         "info": "Transition speed",
         "placeholder": "400"
+      }
+    ]
+  },
+  {
+    "name": "Product Page",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "product_collection_navigator_enable",
+        "default": true,
+        "label": "Turn on navigation between products within a shared collection"
+      },
+      {
+        "type": "checkbox",
+        "id": "product_sku_enable",
+        "default": true,
+        "label": "Display SKU# for product"
+      },
+      {
+        "type": "header",
+        "content": "Popups"
+      },
+      {
+        "type": "checkbox",
+        "id": "product_shipping_popup_enable",
+        "default": true,
+        "label": "Enable Shipping & Returns Popup"
+      },
+      {
+        "type": "page",
+        "id": "product_shipping_popup_page",
+        "label": "Shiping & Returns Page",
+        "info": "Choose the page that will contain 'Shipping (and return)' info"
+      },
+      {
+        "type": "checkbox",
+        "id": "product_questions_popup_enable",
+        "default": true,
+        "label": "Enable Questions Popup"
+      },
+      {
+        "type": "page",
+        "id": "product_contact_page",
+        "label": "Contact Page",
+        "info": "Choose the page that will contain Contact info"
       }
     ]
   },

@@ -298,7 +298,9 @@
       "unavailable": "Unavailable",
       "compare_at": "Compare at",
       "quantity": "Quantity",
-      "add_to_cart": "Add to Cart"
+      "add_to_cart": "Add to Cart",
+      "shipping_info": "Shipping & Returns",
+      "contact_info": "Contact Us"
     }
   },
   "gift_cards": {
